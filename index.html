@@ -44,31 +44,19 @@ Open BitShares wallet &gt; Advanced &gt; Console: approve delegate.kencode true 
 
 <p></p>
 
-
-<div ng-controller="DemoController" style="display: inline">
-    <div id="rlsui1"></div>
-</div>
-&nbsp;
-<table>
-    <tr>
-        <td class="menu" nowrap>
-            <div style="display: inline"><a href="http://kencode.de/projects" id="language">projects</a></div>
-            &nbsp;&nbsp;&#183;&nbsp;&nbsp;
-            <div style="display: inline"><a href="http://kencode.de/contact" id="language">contact</a></div>
-            &nbsp;
-        </td>
-
-    </tr>
+<div ng-controller="DemoController" style="display: inline"><div id="rlsui1"></div></div>
+<table style=" border-bottom: none; padding: 0px 0px;  margin: 0 0 0px !important;">
+<tr>
+<td class="menu" nowrap style=" border-bottom: none; padding: 0px 0px;  margin: 0 0 0px !important;">
+<div style="display: inline"><a href="http://kencode.de/projects" id="language">projects</a></div>&nbsp;&nbsp;&#183;&nbsp;&nbsp;
+<div style="display: inline"><a href="http://kencode.de/contact" id="language">contact</a></div>
+</td>
+</tr>
 </table>
-<nobr>
-    <div style="display: inline">
-        <div id="language">Fast Companies ♥ Decentralization</div>
-    </div>
-    <div style="display: inline"><img id="language" src=""></div>
-</nobr>
+<div style="display: inline"><div id="language">Fast Companies ♥ Decentralization</div></div>
+<div style="display: inline"><img id="language" src=""></div>
 <br>
 <script>
-
     var lang = new React.LS('languages/de.json', 'de_DE');
 
     lang.ready(function () {
@@ -101,8 +89,6 @@ Open BitShares wallet &gt; Advanced &gt; Console: approve delegate.kencode true 
         }), document.getElementById('rlsui1'));
     });
 </script>
-
-
       </section>
     </div>
     <footer>
