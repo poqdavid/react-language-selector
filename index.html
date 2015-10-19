@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="javascripts/scale.fix.js"></script>
+	<link href="stylesheet/react-language-selector-ui.css" rel="stylesheet">
+
+    <script src="javascripts/react-with-addons-0.13.3.min.js"></script>
+    <!-- language specific code -->
+    <script src="javascripts/react-simplehtmlparser.min.js"></script>
+    <script src="javascripts/react-language-selector.min.js"></script>
+    <!-- language specific code -->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
@@ -38,40 +45,62 @@ Open BitShares wallet &gt; Advanced &gt; Console: approve delegate.kencode true 
 <p></p>
 
 
-
-
-
-
-
-
-
-
-
-<div>
+<div ng-controller="DemoController" style="display: inline">
     <div id="rlsui1"></div>
 </div>
-
-<p> </p>
-
+&nbsp;
 <table>
     <tr>
-        <td nowrap>
-            <div><a href="http://kencode.de/projects" id="language">projects</a></div>
-              ·  
-            <div><a href="http://kencode.de/contact" id="language">contact</a></div>
-             
+        <td class="menu" nowrap>
+            <div style="display: inline"><a href="http://kencode.de/projects" id="language">projects</a></div>
+            &nbsp;&nbsp;&#183;&nbsp;&nbsp;
+            <div style="display: inline"><a href="http://kencode.de/contact" id="language">contact</a></div>
+            &nbsp;
         </td>
 
     </tr>
 </table>
-
-<p>
-    <div>
+<nobr>
+    <div style="display: inline">
         <div id="language">Fast Companies ♥ Decentralization</div>
     </div>
-    <div><img id="language" src=""></div>
+    <div style="display: inline"><img id="language" src=""></div>
+</nobr>
+<br>
+<script>
 
-<br></p>
+    var lang = new React.LS('languages/de.json', 'de_DE');
+
+    lang.ready(function () {
+        var rlsui_languages = [
+            {
+                id: 'en_US',
+                langfile: 'languages/en.json',
+                title: 'English (US)',
+                name: ' English (US)',
+                flagImg: 'images/flags/us.png',
+                flagTitle: 'United States'
+            },
+            {
+                id: 'de_DE',
+                langfile: 'languages/de.json',
+                title: 'German',
+                name: ' Deutsch',
+                flagImg: 'images/flags/de.png',
+                flagTitle: 'Germany'
+            },
+        ];
+
+        React.render(React.createElement(lang.UI, {
+            items: rlsui_languages,
+            selectedLang: window.lang.getsetting('lang', 'de_DE'),
+            onLanguageChanged: function (rlsui_lang) {
+
+                lang.set_load_lang(rlsui_lang.id, rlsui_lang.langfile);
+            }
+        }), document.getElementById('rlsui1'));
+    });
+</script>
 
 
       </section>
